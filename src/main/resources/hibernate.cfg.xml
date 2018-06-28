@@ -5,15 +5,19 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/topics</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/libapi?createDatabaseIfNotExist=true</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
         <property name="hibernate.connection.pool_size">1</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         
-        <mapping class="SPBoot.SPBoot.Topics.TopicsModel"/>
+        <mapping class="com.library.Student.StudentModel"/>
+        <mapping class="com.library.Librarian.LibrarianModel"/>
+        <mapping class="com.library.Book.BookModel"/>
+        <mapping class="com.library.Comment.CommentModel"/>
+        <mapping class="com.library.StudentBorrow.StudentBorrowModel"/>
     </session-factory>
 </hibernate-configuration>

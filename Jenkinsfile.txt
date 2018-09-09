@@ -18,7 +18,7 @@ pipeline {
 		stage('library-app-deployment-stage'){
 			steps {
 				withMaven(maven: 'maven_3_5_4') {
-					sh 'mvn deploy'
+					sh 'mvn package'
 				}
 			}
 		}

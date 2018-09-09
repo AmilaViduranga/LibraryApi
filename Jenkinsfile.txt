@@ -8,5 +8,19 @@ pipeline {
 				}
 			}
 		}
+		stage('library-app-testing-stage'){
+			steps {
+				withMaven(maven: 'maven_3_5_4') {
+					sh 'mvn test'
+				}
+			}
+		}
+		stage('library-app-deployment-stage'){
+			steps {
+				withMaven(maven: 'maven_3_5_4') {
+					sh 'mvn package'
+				}
+			}
+		}
 	}
 }
